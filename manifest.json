@@ -1,5 +1,5 @@
 {
-	"name": "Chinese Overlay",
+	"name": "HSK Overlay",
 	"version": "0.0.1",
 	"description": "Highlights HSK vocabulary on Chinese language websites",
 	"icons": {},
@@ -11,7 +11,7 @@
 		"all_frames": true,
 		"css": ["css/content.css"],
 		"js": [
-			"js/lib/jquery-migrate-1.4.1.min.js",
+			"js/lib/jquery-3.2.1.min.js",
 			"js/main.js"
 		],
 		"matches": ["<all_urls>"],
