@@ -9,8 +9,10 @@ var includeTitles = false;
 var wrapTextInSpan = function() {
 	// remove <a> tag's title attribute
 	$('a').prop('title','');
+	// remove image alternative text
+	$('img').prop('alt','');
 
-	let targetDivs = "p,span";
+	let targetDivs = "p,span,li";
 
 	//targetDivs = (includeTitles) ? targetDivs+',h1,h2,h3' : targetDivs;
 	
@@ -19,7 +21,7 @@ var wrapTextInSpan = function() {
 			$(e).removeAttr('data-foreign-title data-orig-title');// Wikipedia foreign language links
 			let html = $(e).html();
 			html = html.replace(new RegExp( phrase,'g')
-			, `<text style="color:red;background-color:yellow">${phrase}</text>`);
+			, `<text class="hsk-keyword-highlight">${phrase}</text>`);
 			$(e).html(html);
 		});
 	});
