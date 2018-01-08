@@ -3,13 +3,8 @@
 	"version": "0.0.1",
 	"description": "Highlights HSK vocabulary on Chinese language websites",
 	"icons": {},
-	"background": {
-		"persistent": false,
-		"scripts": ["bg.html"]
-	},
 	"content_scripts": [{
 		"all_frames": true,
-		"css": ["css/content.css"],
 		"js": [
 			"js/lib/jquery-3.2.1.min.js",
 			"js/main.js"

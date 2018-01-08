@@ -7,23 +7,24 @@ const vocab_5=["哎","唉","爱护","爱惜","爱心","安慰","安装","岸","�
 var includeTitles = false;
 
 var wrapTextInSpan = function() {
+	// remove <a> tag's title attribute
+	$('a').prop('title','');
+
 	let targetDivs = "p,span";
 
 	//targetDivs = (includeTitles) ? targetDivs+',h1,h2,h3' : targetDivs;
-
-	//let html = $(targetDivs).html();
 	
 	vocab_5.forEach(function(phrase){
 		$(targetDivs).each(function(i,e){
+			$(e).removeAttr('data-foreign-title data-orig-title');// Wikipedia foreign language links
 			let html = $(e).html();
 			html = html.replace(new RegExp( phrase,'g')
-			, `<span style="color:red;background-color:yellow">${phrase}</span>`);
+			, `<text style="color:red;background-color:yellow">${phrase}</text>`);
 			$(e).html(html);
-			
 		});
 	});
 
-	//$(targetDivs).html(html);
+	
 }
 
 var toggleIncludeTitles = function(){
@@ -31,12 +32,8 @@ var toggleIncludeTitles = function(){
 }
 
 var main = function() {
-	//var targetText = "计算";
 	console.log("Begin Main");
-	// vocab_5.slice(0,10).forEach(function(targetText){
-	// 	wrapTextInSpan(targetText);
-	// });
-	toggleIncludeTitles();
+	//toggleIncludeTitles();
 	wrapTextInSpan();
 	console.log("End Main");
 };
