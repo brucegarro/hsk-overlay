@@ -8,6 +8,7 @@
 		"css": ["css/content.css"],
 		"js": [
 			"js/lib/jquery-3.2.1.min.js",
+			"js/constants/vocab.js",
 			"js/main.js"
 		],
 		"matches": ["<all_urls>"],
